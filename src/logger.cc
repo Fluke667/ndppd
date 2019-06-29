@@ -89,7 +89,8 @@ std::string logger::err()
         return "Unknown error";
     return buf;
 #else
-    return strerror_r(errno, buf, sizeof(buf));
+    //return strerror_r(errno, buf, sizeof(buf));
+    return "errno: "+errno;
 #endif
 }
 
